@@ -17,6 +17,9 @@ public class MuseOscServer {
 
     private final int port;
     private final OscP5 museServer;
+    private final LightSwitch lightSwitch;
+
+    private boolean done;
 
     /**
      * Instantiates a <code>MuseOscServer</code> object that uses the given port
@@ -27,16 +30,26 @@ public class MuseOscServer {
     public MuseOscServer(int p) {
         this.port = p;
         this.museServer = new OscP5(this, p);
+        this.lightSwitch = new LightSwitch(false);
+        this.done = true;
     }
 
     /**
-     * Triggered when data is received from the Muse device.
+     * Toggles the LightSwitch when the user of the Muse device clenches their
+     * jaw.
      *
      * @param msg The data that is received from the Muse device.
      */
     public void oscEvent(OscMessage msg) {
         if (msg.checkAddress("/muse/elements/jaw_clench")) {
-
+            if (msg.get(0).booleanValue()) {
+                if (this.done) {
+                    this.lightSwitch.toggleState();
+                    this.done = false;
+                }
+            } else {
+                this.done = true;
+            }
         }
     }
 
