@@ -7,18 +7,19 @@ package muselightswitch;
 
 /**
  * The class that handles the main functionality of the program.
- * 
+ *
  * @author Christopher Wells <cwellsny@nycap.rr.com>
  */
 public class Main {
 
     /**
      * Runs the main functionality of the program.
-     * 
+     *
      * @param args The command line arguments.
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        int port = 5000;
+        MuseOscServer museServer = new MuseOscServer(port);
     }
-    
+
 }
