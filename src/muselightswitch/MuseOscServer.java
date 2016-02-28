@@ -1,7 +1,8 @@
 /*
  * The MIT License
  *
- * Copyright 2016 Christopher Wells <cwellsny@nycap.rr.com>.
+ * Copyright 2016 Christopher Wells <cwellsny@nycap.rr.com>
+ *                Shakhar Dasgupta
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -30,6 +31,7 @@ import oscP5.*;
  * device.
  *
  * @author Christopher Wells <cwellsny@nycap.rr.com>
+ * @author Shakhar Dasgupta
  */
 public class MuseOscServer {
 
