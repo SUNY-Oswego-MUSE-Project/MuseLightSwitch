@@ -26,10 +26,19 @@ public class LightSwitch {
     }
 
     /**
+     * Changes the state of the physical light whenever the state of the
+     * LightSwitch is changed.
+     */
+    private void onStateChange() {
+        // TODO: Implement code to change the actual physical state of the light
+    }
+
+    /**
      * Turns the LightSwitch off.
      */
     public void turnOff() {
         this.state = false;
+        this.onStateChange();
     }
 
     /**
@@ -37,6 +46,7 @@ public class LightSwitch {
      */
     public void turnOn() {
         this.state = true;
+        this.onStateChange();
     }
 
     /**
@@ -44,6 +54,16 @@ public class LightSwitch {
      */
     public void toggleState() {
         this.state = !this.state;
+        this.onStateChange();
+    }
+
+    /**
+     * Returns the state of the LightSwitch.
+     *
+     * @return The state of the LightSwitch.
+     */
+    public boolean getState() {
+        return this.state;
     }
 
 }
