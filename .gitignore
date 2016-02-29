@@ -1,2 +1,11 @@
 # Project builds
 /build/
+
+# Netbeans files
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+.nb-gradle/
