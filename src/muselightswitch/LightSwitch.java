@@ -23,6 +23,8 @@
  */
 package muselightswitch;
 
+import java.time.LocalDateTime;
+
 /**
  * The <code>LightSwitch</code> represents a physical light switch, which can be
  * turned on and off.
@@ -49,6 +51,8 @@ public class LightSwitch {
      */
     private void onStateChange() {
         // TODO: Implement code to change the actual physical state of the light
+        LocalDateTime time = LocalDateTime.now();
+        System.out.println(time.getHour() + ":" + time.getMinute() + ":" + time.getSecond() + " Light state changed to: " + this.state);
     }
 
     /**
